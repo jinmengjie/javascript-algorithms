@@ -1,3 +1,7 @@
+/**
+ * 创建一个记录学生成绩的对象，提供一个添加成绩的方法，以及一个现实学生平均成绩的方法
+ */
+
 function Student() {
     this.scores = [];
     this.add = add;

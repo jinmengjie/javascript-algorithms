@@ -1,3 +1,7 @@
+/**
+ * 使用一个二维数组来存储每月的有用数据，增加一些方法用来显示月平均数、具体某一周的平均数和所有周的平均数
+ */
+
 function weekTemp() {
     this.dataStore = [];
     this.add = add;
