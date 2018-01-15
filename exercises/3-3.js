@@ -16,9 +16,9 @@ function checkOut(list) {
             list.getElement()['sex'] === 'm' ? mArray.push(list.getElement()['name']) : fArray.push(list.getElement()['name']);
         }
     }
-    console.log("who's sex is male: ");
+    console.log("whose sex is male: ");
     console.log(mArray);
-    console.log("who's sex is female: ");
+    console.log("whose sex is female: ");
     console.log(fArray);
 }
 
