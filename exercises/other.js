@@ -11,4 +11,6 @@ let uniqueArray = arr => {
     return result;
 }
 // test
-uniqueArray([{a:'1'},2,3,4,{a:'1'},'2222','2222',{b:'2'},'adsad', {b:'2'}, {'a': {a:'1'}},{'a': {a:'1'}}]);
+// uniqueArray([{a:'1'},2,3,4,{a:'1'},'2222','2222',{b:'2'},'adsad', {b:'2'}, {'a': {a:'1'}},{'a': {a:'1'}}]);
+
+uniqueArray([{ val: 1 }, { val: 1 }, { val: 3 }]);
