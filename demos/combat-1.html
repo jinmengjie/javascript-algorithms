@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Combat-1</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        body {
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="grid">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <style>
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+        }
+        .grid li {
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            /* 解决父盒子宽度问题 */
+            border: 4px solid #ccc;
+            box-sizing: border-box;
+            /* 负边距解决相邻边距双倍的问题 */
+            margin-left: -4px;
+            margin-top: -4px;
+        }
+        /* 解决设置负边距导致的整体左移和上移移动问题 */
+        .grid li:nth-child(3n+1) {
+            margin-left: 0;
+        }
+        .grid li:nth-child(-n+3) {
+            margin-top: 0;
+        }
+        .grid li:hover {
+            border-color: red;
+            /* 解决负边距导致的边框重叠问题 */
+            z-index: 2;
+        }
+    </style>
+</body>
+</html>
