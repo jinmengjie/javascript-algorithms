@@ -138,3 +138,43 @@ new new Foo().getName(); //3
 考察点：递归、隐式类型转换、遍历器
 
 
+### 高阶函数实现AOP（AOP：面向切面变成）
+
+高阶函数是指至少满足下面条件之一的函数：
+1、函数可以作为参数被传递
+2、函数可以做人返回值输出
+
+
+```javascript
+    Function.prototype.before = function(beforeFn) {
+        var self = this;
+        return function() {
+            beforeFn.apply(this, arguments);
+            return self.apply(this, arguments);
+        }
+    };
+
+    Function.prototype.after = function(afterFn) {
+        var self = this;
+        return function() {
+            var ret = self.apply(this, arguments);
+            afterFn.apply(this, arguments);
+            return ret;
+        }
+    };
+
+    var func = function() {
+        console.log(2);
+    };
+
+    func = func.before(function(){
+        console.log(1);
+    }).after(function(){
+        console.log(3);
+    });
+
+    func();
+
+```
+
+
