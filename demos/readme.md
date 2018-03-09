@@ -101,7 +101,7 @@ Expires服务器绝对时间（有可能因为客户端时间和服务器时间�
     1）try...catch; 
     2）window.onerror （window.onerror无法捕获资源加载错误，因为script、img等onerror错误不冒泡，无法触发window下的onerror事件）
 
-资源记载错误：
+资源加载错误：
     1）object.onerror（如图片img.onerror，script标签）
     2）performance.getEnries()   获取所有资源加载时长
     3）error事件捕获
