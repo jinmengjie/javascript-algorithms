@@ -33,6 +33,7 @@ class HashTable {
             this.table[pos] = key;
             this.values[pos] = data;
         } else {
+            // 线性探测法：当发生碰撞时，检查散列表中下一个位置是否为空，如果为空就将数据存入，否则继续检查下一个位置
             while (this.table[pos] != undefined) {
                 pos++;
             }
