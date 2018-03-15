@@ -12,7 +12,7 @@ class LList {
     }
     find (item) {
         let currNode = this.head;
-        while (currNode.element != item) {
+        while (currNode && (currNode.element != item)) {
             currNode = currNode.next;
         }
         return currNode;
@@ -45,17 +45,19 @@ class LList {
     }
 }
 
-let cities = new LList();
-cities.insert('1', "head");
-cities.insert('2', '1');
-cities.insert('3', '2');
-cities.display();
+module.exports = {Node, LList};
 
-console.log('------------------');
-cities.insert('4', '1');
-cities.display();
+// let cities = new LList();
+// cities.insert('1', "head");
+// cities.insert('2', '1');
+// cities.insert('3', '2');
+// cities.display();
 
-console.log('------------------');
-cities.remove('2');
-cities.display();
+// console.log('------------------');
+// cities.insert('4', '1');
+// cities.display();
+
+// console.log('------------------');
+// cities.remove('2');
+// cities.display();
 
