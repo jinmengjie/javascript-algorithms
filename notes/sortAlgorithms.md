@@ -245,3 +245,11 @@
         return qSort(lesser).concat(pivot, qSort(greater));
     }
 ```
+
+使用filter一行代码写快排
+
+```javascript
+    function quickSort(a) {
+        return a.length <= 1 ? a : quickSort(a.slice(1).filter(item => item <= a[0])).concat(a[0], quickSort(a.slice(1).filter(item => item > a[0])));
+    }
+```
