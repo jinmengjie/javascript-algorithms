@@ -20,3 +20,38 @@ uniqueArray([{ val: 1 }, { val: 1 }, { val: 3 }]);
 let arr = [2,"12",2,12,1,2,1,6,12,13,6];
 [...new Set(arr)];
 // [2, "12", 12, 1, 6, 13]
+
+
+
+// 实现destructuringArray方法，达到如下效果
+// destructuringArray( [1,[2,4],3], "[a,[b],c]" );
+// result
+// { a:1, b:2, c:3 }
+
+const targetArray = [1, [2, 3], 4];
+const formater = "[a, [b], c]";
+const formaterArray = ['a', ['b'], 'c'];
+
+const destructuringArray = (values, keys) => {
+  try {
+    const obj = {};
+    if (typeof keys === 'string') {
+      keys = JSON.parse(keys.replace(/\w+/g, '"$&"'));
+    }
+    
+    const iterate = (values, keys) =>
+      keys.forEach((key, i) => {
+        if(Array.isArray(key)) iterate(values[i], key)
+        else obj[key] = values[i]
+      })
+      
+    iterate(values, keys)
+    
+    return obj;
+  } catch (e) {
+    console.error(e.message);
+  }
+}
+
+console.dir(destructuringArray(targetArray,formater));
+console.dir(destructuringArray(targetArray,formaterArray));
