@@ -21,7 +21,16 @@ let arr = [2,"12",2,12,1,2,1,6,12,13,6];
 [...new Set(arr)];
 // [2, "12", 12, 1, 6, 13]
 
+// 利用reduce实现数组去重
 
+let arr = [1,2,1,2,3,5,4,5,3,4,4,4,4];
+let result = arr.sort().reduce((init, current)=>{
+    if(init.length===0 || init[init.length-1]!==current){
+        init.push(current);
+    }
+    return init;
+}, []);
+console.log(result); //[1,2,3,4,5]
 
 // 实现destructuringArray方法，达到如下效果
 // destructuringArray( [1,[2,4],3], "[a,[b],c]" );
